@@ -1,0 +1,40 @@
+body {
+  font-family: Arial, sans-serif;
+  background: #f2f2f2;
+  margin: 0;
+  padding: 20px;
+}
+
+.container {
+  max-width: 1200px;
+  margin: auto;
+  background: #fff;
+  padding: 20px;
+}
+
+h2 {
+  text-align: center;
+}
+
+.controls {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.controls label {
+  font-weight: bold;
+}
+
+.controls input, .controls select, .controls button {
+  padding: 8px;
+  width: 100%;
+  margin-bottom: 5px;
+}
+
+canvas {
+  display: block;
+  margin: 20px auto;
+  border: 3px solid #b40000; /* Jamuna primary color */
+}
