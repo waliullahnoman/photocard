@@ -1,63 +1,67 @@
 <!DOCTYPE html>
-<html lang="bn">
+<html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Jamuna-style Photo Card Generator</title>
-  <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>News Photo Card Creator</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Bengali:wght@400;700&display=swap" rel="stylesheet">
 </head>
 <body>
-<div class="container">
-
-  <h2>📰 Jamuna-style Photo Card Generator</h2>
-
-  <div class="controls">
-
-    <label>Headline:</label>
-    <input type="text" id="headline" placeholder="হেডলাইন লিখুন / Enter Headline">
-
-    <label>Subheading:</label>
-    <input type="text" id="subheading" placeholder="সাবহেডিং লিখুন / Enter Subheading">
-
-    <label>Date:</label>
-    <input type="text" id="date" placeholder="27 December 2025">
-
-    <label>Domain / Website:</label>
-    <input type="text" id="domain" placeholder="www.example.com">
-
-    <label>Media Name:</label>
-    <input type="text" id="media" placeholder="Jamuna TV">
-
-    <label>Facebook:</label>
-    <input type="text" id="facebook" placeholder="facebook.com/...">
-
-    <label>YouTube:</label>
-    <input type="text" id="youtube" placeholder="youtube.com/...">
-
-    <label>Upload Image:</label>
-    <input type="file" id="imageInput">
-
-    <label>Upload Logo:</label>
-    <input type="file" id="logoInput">
-
-    <label>Font:</label>
-    <select id="fontSelect">
-      <option value="SolaimanLipi">SolaimanLipi</option>
-      <option value="Noto Sans Bengali">Noto Sans Bengali</option>
-      <option value="Arial">Arial</option>
-    </select>
-
-    <label>Text Color:</label>
-    <input type="color" id="textColor" value="#ffffff">
-
-    <button onclick="generateCard()">Generate</button>
-    <button onclick="downloadImage()">Download PNG</button>
-
-  </div>
-
-  <canvas id="canvas" width="1080" height="1080"></canvas>
-
-</div>
-
-<script src="script.js"></script>
+    <div class="container">
+        <div class="left-panel">
+            <h2>Controls</h2>
+            <label for="template">Template:</label>
+            <select id="template">
+                <option value="jamuna">Jamuna-style</option>
+                <!-- Add more options here later -->
+            </select>
+            
+            <label for="headlineBangla">Headline (Bangla):</label>
+            <input type="text" id="headlineBangla" placeholder="Enter Bangla headline">
+            
+            <label for="headlineEnglish">Headline (English):</label>
+            <input type="text" id="headlineEnglish" placeholder="Enter English headline">
+            
+            <label for="subheading">Subheading:</label>
+            <input type="text" id="subheading" placeholder="Enter subheading">
+            
+            <label for="date">Date:</label>
+            <input type="date" id="date">
+            
+            <label for="domain">Domain / Website:</label>
+            <input type="text" id="domain" placeholder="e.g., example.com">
+            
+            <label for="mediaName">Media Name:</label>
+            <input type="text" id="mediaName" placeholder="e.g., Daily News">
+            
+            <label for="facebookUrl">Facebook URL:</label>
+            <input type="url" id="facebookUrl" placeholder="https://facebook.com/...">
+            
+            <label for="youtubeUrl">YouTube URL:</label>
+            <input type="url" id="youtubeUrl" placeholder="https://youtube.com/...">
+            
+            <label for="logoUpload">Logo Upload:</label>
+            <input type="file" id="logoUpload" accept="image/*">
+            
+            <label for="fontSelector">Font:</label>
+            <select id="fontSelector">
+                <option value="Noto Sans Bengali">Noto Sans Bengali</option>
+                <option value="Arial">Arial</option>
+                <option value="Times New Roman">Times New Roman</option>
+            </select>
+            
+            <label for="textColor">Text Color:</label>
+            <input type="color" id="textColor" value="#000000">
+            
+            <label for="mainImageUpload">Main Image Upload:</label>
+            <input type="file" id="mainImageUpload" accept="image/*">
+        </div>
+        <div class="central-area">
+            <canvas id="previewCanvas" width="1080" height="1080"></canvas>
+            <button id="downloadBtn">Download PNG</button>
+        </div>
+    </div>
+    <script src="script.js"></script>
 </body>
 </html>
